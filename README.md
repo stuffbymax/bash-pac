@@ -1,4 +1,4 @@
-                        echo Game Instructions
+                         ###Game Instructions
  ==========================================================================
                          Player character: P
 
