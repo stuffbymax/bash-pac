@@ -114,23 +114,26 @@ function start_game() {
     fi
   }
 
-  # Function to reset the game
-  function reset_game() {
-    player_row=1
-    player_col=1
-    score=0
-    board=(
-      "#################"
-      "#P..............#"
-      "#.....###.......#"
-      "#.....# ........#"
-      "#.....###.......#"
-      "#...............#"
-      "#...............#"
-      "#################"
-    )
-    spawn_ghosts
-  }
+# Function to reset the game
+function reset_game() {
+  player_row=1
+  player_col=1
+  score=0
+  board=(
+    "#################"
+    "#P..............#"
+    "#.....###.......#"
+    "#.....# ........#"
+    "#.....###.......#"
+    "#...............#"
+    "#...............#"
+    "#################"
+  )
+  spawn_ghosts
+
+  player_died=false  # Reset the player_died flag
+}
+  
 
   # Initialize player position
   player_row=1
