@@ -1,3 +1,13 @@
+about the project
+------------------
+the bash-pac is clone of pacman
+that is writen in bash script.
+
+if you want better expirience install
+bash-pac.sh
+
+
+
 Game Instructions
 -------------------
  Player character: (C)
