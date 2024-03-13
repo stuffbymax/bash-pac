@@ -1,41 +1,39 @@
-                         ###Game Instructions
- ==========================================================================
-                         Player character: P
+Game Instructions
+
+ Player character: P
 
   Avoid the ghost (G) while collecting food (.) to increase your score.
  
-                            Controls:
-                       ------------------
-                          W: Move Up
-                          A: Move Left
-                          S: Move Down
-                          D: Move Right
+  Controls:
+  ------------------
+A: Move Left
+S: Move Down
+D: Move Right
 
-                       In-game shortcuts:
-                    -------------------------
-                      Q: Exit full terminal
-                   Ctrl: Exit only the program
-                   Tap: Return to the main menu
-=========================================================================================
+In-game shortcuts:
+-------------------------
+Q: Exit full terminal
+Ctrl: Exit only the program
+Tap: Return to the main menu
 Linux
 -------
                    
 Set execute permission on your script using the following command:
-chmod +x script-name-here.sh
+'chmod +x script-name-here.sh'
 
 To run your script, execute it directly:
-./script-name-here.sh
+'./script-name-here.sh'
 
 Alternatively, you can use either of the following commands:
-sh script-name-here.sh
+'sh script-name-here.sh'
 or
-bash script-name-here.sh
+'bash script-name-here.sh'
 
 for example
 
-chmod +x script /home/zdislav/Desktop/bash-pac.sh
+'chmod +x script /home/zdislav/Desktop/bash-pac.sh'
 
-./home/zdislav/Desktop/bash-pac.sh
+'./home/zdislav/Desktop/bash-pac.sh'
 
 
 
@@ -47,9 +45,9 @@ Windows
 Open Command Prompt and navigate to the folder where the script file is located.
 Type the following command and hit Enter:
 
-bash script-filename.sh
+'bash script-filename.sh'
  
-bash script-bash-pac.sh
+'bash script-bash-pac.sh'
 
 
 
@@ -63,12 +61,12 @@ If you want to run Bash scripts, you can install Bash using the following comman
 pkg add bash
 
 or
-make -C /usr/ports/shells/bash install clean
+'make -C /usr/ports/shells/bash install clean'
 
 After installation, you can execute your Bash script by invoking bash ./home/zdislav/Desktop/bash-pac.sh
 Use a Universal Shebang:
 Modify the shebang (the first line of your script) to use a more universally compatible shell location.
-Instead of #!/bin/bash, use #!/bin/sh.
+Instead of '#!/bin/bash, use #!/bin/sh.'
 Then, within your script, you can check where Bash is installed (if it’s even installed) and adjust accordingly.
 
 
@@ -86,10 +84,10 @@ Running Scripts:
 
 You can run shell commands in Android using Termux.
 Create/download a BASH script (or any script) with a .sh extension.
-Use ./myscript.sh to execute the script directly.
+Use './myscript.sh' to execute the script directly.
 Alternatively, call BASH in a new shell and feed its commands from a text file using bash myscript.sh
 
-for example ./home/zdislav/Desktop/bash-pac.sh
+for example './home/zdislav/Desktop/bash-pac.sh'
 
 not recomended by me (i thing is harder)
 
@@ -108,11 +106,11 @@ mac os
 Run the Script: 
 
 you can run your script by typing:
-./myscript.sh
+'./myscript.sh'
 
 for example 
 
-./home/zdislav/Desktop/bash-pac.sh
+'./home/zdislav/Desktop/bash-pac.sh'
 
 The ./ prefix specifies that you want to execute the script in the current directory.
 Double-Click in Finder:
