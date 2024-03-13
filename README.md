@@ -1,6 +1,6 @@
 Game Instructions
-
- Player character: P
+-------------------
+ Player character: (C)
 
   Avoid the ghost (G) while collecting food (.) to increase your score.
  
