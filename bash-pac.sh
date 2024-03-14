@@ -192,7 +192,7 @@ function display_help() {
   clear
   echo "Game Instructions"
   echo "------------------"
-  echo "Player character: P"
+  echo "Player character: (C)"
   echo
   echo "Avoid the ghost (G) while collecting food (.) to increase your score."
   echo
