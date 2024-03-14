@@ -13,7 +13,7 @@ bash script-name-here.sh
 
 for example
 
-chmod +x script /home/zdislav/Desktop/bash-pac.sh
+chmod +x /home/zdislav/Desktop/bash-pac.sh
 
 ./home/zdislav/Desktop/bash-pac.sh
 
