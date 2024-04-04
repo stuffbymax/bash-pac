@@ -5,12 +5,10 @@ about the project
 the bash-pac is clone of pacman
 that is writen in bash script.
 
-if you want better expirience install
+if you want better expirience Install
+----------------------------------------
 
-``sudo apt-get install pacman4console``
-
-
-
+``pacman4console``
 
 Game Instructions
 -------------------
