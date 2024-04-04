@@ -2,6 +2,7 @@ if you do not want to install the bash script click here https://onlinegdb.com/4
 ---------------------------------------------------------------------------------------------
 about the project
 ------------------
+****waring this project is not finished****
 the bash-pac is clone of pacman
 that is writen in bash script.
 
