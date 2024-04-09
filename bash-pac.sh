@@ -1,8 +1,34 @@
 #!/bin/bash
 
+# Function to display the animation
+function display_animation() {
+  clear
+  echo "G    C"
+  sleep 0.3
+  clear
+  echo "G   C"
+  sleep 0.3
+  clear
+  echo "G  C"
+  sleep 0.3
+  clear
+  echo "G  C"
+  sleep 0.3
+  clear
+  echo G C
+  sleep 0.3
+  clear
+  echo GC
+  sleep 0.3
+}
+
+# Start the animation
+display_animation
+
+# After the animation, you can call your start_game function or any other function to continue with the game.
+
 # Function to start the game
 function start_game() {
-  clear
   # Pac-Man clone in Bash
 
   # Initialize variables
@@ -15,18 +41,17 @@ function start_game() {
 
   # Define the game board
   declare -a board=(
-"################################"
-"#C.............................#"
-"#.....###......................#"
-"#.....# .......................#"
-"#.....###......................#"
-"#..............................#"
-"#..............................#"
-"#..............................#"
-"#..............................#"
-"#..............................#"
-"################################"
-
+    "################################"
+    "#C                             #"
+    "#                              #"
+    "#                              #"
+    "#                              #"
+    "#                              #"
+    "#                              #"
+    "#                              #"
+    "#                              #"
+    "#                              #"
+    "################################"
   )
 
   # Function to print the game board
@@ -63,7 +88,7 @@ function start_game() {
 
   # Function to move the ghosts
   function move_ghosts() {
-    local player_distance=100
+    local player_distance=1000
     local next_row=$ghost_row
     local next_col=$ghost_col
 
@@ -90,11 +115,25 @@ function start_game() {
     fi
   }
 
-  # Function to spawn ghosts in the middle
+  # Function to spawn ghosts at random positions
   function spawn_ghosts() {
-    ghost_row=3
-    ghost_col=10
+    ghost_row=$((RANDOM % (${#board[@]} - 2) + 1))
+    ghost_col=$((RANDOM % (${#board[0]} - 2) + 1))
     board[$ghost_row]=${board[$ghost_row]:0:$ghost_col}$ghost${board[$ghost_row]:$((ghost_col + 1))}
+  }
+
+  # Function to spawn food at random positions
+  function spawn_food() {
+    local row
+    local col
+    local num_food=20  # Adjust the number of food items here
+    for ((i=0; i<num_food; i++)); do
+      row=$((RANDOM % (${#board[@]} - 2) + 1))
+      col=$((RANDOM % (${#board[0]} - 2) + 1))
+      if [[ ${board[$row]:$col:1} == "$empty" ]]; then
+        board[$row]=${board[$row]:0:$col}$food${board[$row]:$((col + 1))}
+      fi
+    done
   }
 
   # Function to check if the game is over with a timer
@@ -118,29 +157,44 @@ function start_game() {
     fi
   }
 
-# Function to reset the game
-function reset_game() {
-  player_row=1
-  player_col=1
-  score=0
-  board=(
-"################################"
-"#C.............................#"
-"#.....###......................#"
-"#.....# .......................#"
-"#.....###......................#"
-"#..............................#"
-"#..............................#"
-"#..............................#"
-"#..............................#"
-"#..............................#"
-"################################"
-  )
-  spawn_ghosts
+  # Function to display the victory message
+  function game_over_with_victory() {
+    print_board
+    echo "Congratulations! You collected all the food. You win!"
+    read -p "Press Enter to return to the main menu or type 'exit' to quit: " answer
+    if [ "$answer" == "" ]; then
+      main_menu
+    elif [ "$answer" == "exit" ]; then
+      echo "Goodbye!"
+      exit
+    else
+      echo "Invalid input. Returning to the main menu."
+      main_menu
+    fi
+  }
 
-  player_died=false  # Reset the player_died flag
-}
-  
+  # Function to reset the game
+  function reset_game() {
+    player_row=1
+    player_col=1
+    score=0
+    board=(
+      "################################"
+      "#C                             #"
+      "#                              #"
+      "#                              #"
+      "#                              #"
+      "#                              #"
+      "#                              #"
+      "#                              #"
+      "#                              #"
+      "#                              #"
+      "################################"
+    )
+    spawn_ghosts
+    spawn_food
+    player_died=false  # Reset the player_died flag
+  }
 
   # Initialize player position
   player_row=1
@@ -151,6 +205,9 @@ function reset_game() {
 
   # Spawn ghosts
   spawn_ghosts
+
+  # Spawn food
+  spawn_food
 
   # Flag to track if the player has died
   player_died=false
@@ -169,6 +226,7 @@ function reset_game() {
       "a") move_player 0 -1 ;;
       "d") move_player 0 1 ;;
       "q") echo "Goodbye!"; exit ;;
+      "o") main_menu ;;
       *) ;;
     esac
 
@@ -184,12 +242,19 @@ function reset_game() {
     if [[ ${board[$player_row]:$player_col:1} == "$ghost" ]]; then
       player_died=true
     fi
+
+    # Check if all food is collected
+    if [[ $(grep -o "$food" <<< "${board[*]}") == "" ]]; then
+      game_over_with_victory
+    fi
   done
 }
 
 # Function to display help information
 function display_help() {
   clear
+  echo "made by stuffbymax"
+  echo "------------------"
   echo "Game Instructions"
   echo "------------------"
   echo "Player character: (C)"
@@ -207,8 +272,8 @@ function display_help() {
   echo "------------------"
   echo "Q: Exit full terminal"
   echo "Ctrl: Exit only the program"
-  echo "Tap: Return to the main menu"
-  echo
+  echo "o: Return to the main menu"
+  echo "--------------------------"
   echo "Press Enter to continue..."
   read -r
 }
@@ -219,25 +284,30 @@ function exit_game() {
   exit
 }
 
-# Main menu loop
-while true; do
-  # Main menu
-  clear
-  echo "Options:"
-  echo "1. Start"
-  echo "2. Help"
-  echo "3. Exit"
+# Function to display the main menu
+function main_menu() {
+  while true; do
+    # Main menu
+    clear
+    echo "Options:"
+    echo "1. Start"
+    echo "2. Help"
+    echo "3. Exit"
 
-  # Wait for any key press
-  read -n 1 key
+    # Wait for any key press
+    read -n 1 key
 
-  # Read user input for option
-  read -n 1 option
+    # Read user input for option
+    read -n 1 option
 
-  case $option in
-    "1") start_game ;;
-    "2") display_help ;;
-    "3") exit_game ;;
-    *) ;;
-  esac
-done
+    case $option in
+      "1") start_game ;;
+      "2") display_help ;;
+      "3") exit_game ;;
+      *) ;;
+    esac
+  done
+}
+
+# Start the main menu
+main_menu
