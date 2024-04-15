@@ -24,6 +24,7 @@ function display_animation() {
   echo "GC."
   sleep 0.3
   clear
+  echo "bash-pac v1.1.5"
 }
 
 # Start the animation
@@ -45,17 +46,17 @@ function start_game() {
 
   # Define the game board
   declare -a board=(
-    "################################"
-    "#C                             #"
-    "#                              #"
-    "#                              #"
-    "#                              #"
-    "#                              #"
-    "#                              #"
-    "#                              #"
-    "#                              #"
-    "#                              #"
-    "################################"
+    "####################################"
+    "#C                                 #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "####################################"
   )
 
   # Function to print the game board
@@ -183,17 +184,17 @@ function start_game() {
     player_col=1
     score=0
     board=(
-      "################################"
-      "#C                             #"
-      "#                              #"
-      "#                              #"
-      "#                              #"
-      "#                              #"
-      "#                              #"
-      "#                              #"
-      "#                              #"
-      "#                              #"
-      "################################"
+    "####################################"
+    "#C                                 #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "#                                  #"
+    "####################################"
     )
     spawn_ghosts
     spawn_food
@@ -274,8 +275,7 @@ function display_help() {
   echo
   echo "In-game shortcuts:"
   echo "------------------"
-  echo "Q: Exit full terminal"
-  echo "Ctrl: Exit only the program"
+  echo "Q: Exit bash-pac"
   echo "o: Return to the main menu"
   echo "--------------------------"
   echo "Press Enter to continue..."
