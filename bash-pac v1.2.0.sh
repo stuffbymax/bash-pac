@@ -300,7 +300,7 @@ function display_help() {
   echo "Q: Exit bash-pac"
   echo "o: Return to the main menu"
   echo "--------------------------"
-  echo "thanks you for downloading"
+  echo -e "\e[42mGreen thanks you for downloading\e[0m"
   echo "--------------------------"
   echo "Press Enter to continue..."
   read -r
