@@ -25,6 +25,8 @@ function display_animation() {
   sleep 0.3
   clear
   echo "bash-pac v1.1.5"
+  sleep 0.3
+  clear
 }
 
 # Start the animation
