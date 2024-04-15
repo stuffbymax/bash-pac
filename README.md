@@ -7,7 +7,7 @@ waring this project is not finished
 the bash-pac is clone of pacman
 that is writen in bash script.
 
-if you want better expirience Install
+if you want play better copy of pacman Install
 ----------------------------------------
 
 ``pacman4console``
