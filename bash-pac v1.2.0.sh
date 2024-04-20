@@ -24,7 +24,7 @@ function display_animation() {
   echo "GC."
   sleep 0.3
   clear
-  echo -e "\e[91mbash-pac v1.1.5 B\e[0m"
+  echo -e "\e[91mbash-pac v2.0.0 B\e[0m"
   sleep 0.4
   clear
 }
