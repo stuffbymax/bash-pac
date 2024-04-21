@@ -1,3 +1,7 @@
+you need install scores to be able save score
+-----------------------------------------------
+
+
 if you do not want to install the bash script click here https://onlinegdb.com/4wNEzIXxL
 ---------------------------------------------------------------------------------------------
 about the project
