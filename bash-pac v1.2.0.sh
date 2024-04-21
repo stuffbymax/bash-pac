@@ -80,19 +80,13 @@ function start_game() {
     "#######################################"
   )
 
-  # Function to print the game board with score color based on its value
+  # Function to print the game board
   function print_board() {
     clear
     for row in "${board[@]}"; do
       echo "$row"
     done
-    if [ "$score" -le 4 ]; then
-      echo -e "Score: ${txtred}$score${txtrst}"
-    elif [ "$score" -ge 10 ]; then
-      echo -e "Score: ${txtgrn}$score${txtrst}"
-    else
-      echo -e "Score: ${txtylw}$score${txtrst}"
-    fi
+    echo "Score: $score"
   }
 
   # Function to check if a given position is valid on the board
@@ -192,11 +186,9 @@ function game_over_with_timer() {
     read -p "" answer
     if [[ "$answer" == "yes" || "$answer" == "no" ]]; then
       break
-    elif [[ "$answer" == "O" ]]; then
-      main_menu
-      break
-    elif [[ "$answer" == "o" ]]; then
-      main_menu
+    elif [[ "$answer" == "O" || "$answer" == "o" ]]; then
+      save_score
+	  main_menu
       break
     else
       echo "Please type 'yes', 'no', or 'O' to return to the main menu"
@@ -209,12 +201,6 @@ function game_over_with_timer() {
     save_score  # Save the player's score if they choose to quit
     echo "Goodbye!"
     exit
-break
-    elif [[ "$answer" == "o" ]]; then
-  save_score
-      main_menu
-  else
-    save_score  # Save the player's score if they choose to return to the main menu
   fi
 }
 
