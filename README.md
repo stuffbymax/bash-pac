@@ -4,7 +4,8 @@ known bugs
 ------------------------------
 .collision
 
-if you do not want to install the bash script click here https://onlinegdb.com/4wNEzIXxL
+if you do not want to install the bash script click here https://www.onlinegdb.com/lF2xPYk-W
+old version https://www.onlinegdb.com/lF2xPYk-W
 ---------------------------------------------------------------------------------------------
 about the project
 ------------------
