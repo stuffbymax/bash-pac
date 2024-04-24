@@ -35,7 +35,7 @@ function display_animation() {
   echo "GC."
   sleep 0.3
   clear
-  echo -e "${txtgrn}bash-pac v1.2.0 S${txtrst}"
+  echo -e "${txtgrn}bash-pac v1.2.0 CZ S${txtrst}"
   sleep 0.4
   clear
 }
