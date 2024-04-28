@@ -1,8 +1,7 @@
-if the program tells you that scores.txt doesnt exist after you save a score the program will create scores.txt for see your score
+if the program tells you that scores.txt doesnt exist after you save a score the program will create scores.txt
 ------------------------------------------------------------------------------------------------------------------------------------
 known bugs
 ------------------------------
-.collision
 
 if you do not want to install the bash script click here [https://www.onlinegdb.com/lF2xPYk-W](https://onlinegdb.com/rhTNWw26ee)
 
