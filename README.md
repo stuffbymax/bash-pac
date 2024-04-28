@@ -11,8 +11,6 @@ about the project
 ------------------
 waring this project is not finished
 -----------------------------------------
-the bash-pac is clone of pacman
-that is writen in bash script.
 
 if you want play better copy of pacman Install
 ----------------------------------------
