@@ -35,7 +35,7 @@ function display_animation() {
   echo "GC."
   sleep 0.3
   clear
-  echo -e "${txtgrn}bash-pac v1.2.0 S${txtrst}"
+  echo -e "${txtgrn}bash-pac v1.2.1 S${txtrst}"
   sleep 0.4
   clear
 }
@@ -52,7 +52,7 @@ function spawn_enemy() {
 
 # Function to start the game
 function start_game() {
-  # Pac-Man clone in Bash
+  
 
   # Initialize variables
   player="C"
@@ -308,7 +308,7 @@ function display_help() {
   echo "made by stuffbymax"
   echo "------------------"
   echo -e "    ${txtgrn}version${txtrst}"
-  echo -e "${txtgrn}bash-pac v1.2.0 S${txtrst}"
+  echo -e "${txtgrn}bash-pac v1.2.1 S${txtrst}"
   echo "-------------------"
   echo -e "${txtblu}Game Instructions${txtrst}"
   echo "------------------"
