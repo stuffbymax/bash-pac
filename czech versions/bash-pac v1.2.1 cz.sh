@@ -271,6 +271,10 @@ while true; do
 
   # Move player based on input
   case $direction in
+    "A") move_player -1 0 ;; # Up arrow
+    "B") move_player 1 0 ;;  # Down arrow
+    "D") move_player 0 -1 ;; # Left arrow
+    "C") move_player 0 1 ;;  # Right arrow
     "w") move_player -1 0 ;;
     "s") move_player 1 0 ;;
     "a") move_player 0 -1 ;;
