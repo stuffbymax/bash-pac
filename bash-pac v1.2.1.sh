@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 # Color variables
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
@@ -271,6 +273,10 @@ while true; do
 
   # Move player based on input
   case $direction in
+    "A") move_player -1 0 ;; # Up arrow
+    "B") move_player 1 0 ;;  # Down arrow
+    "D") move_player 0 -1 ;; # Left arrow
+    "C") move_player 0 1 ;;  # Right arrow
     "w") move_player -1 0 ;;
     "s") move_player 1 0 ;;
     "a") move_player 0 -1 ;;
@@ -333,14 +339,19 @@ function display_help() {
   echo "Press Enter to continue..."
   read -r
 }
+
 # After the game_over_with_victory() function
 
 # Function to save the player's score
 function save_score() {
   echo "Enter your name: "
   read player_name
-  echo "$player_name $score" >> scores.txt
+  echo "$player_name $score" >> "$HOME/scores.txt"
 }
+
+# Ensure scores.txt is writable
+touch "$HOME/scores.txt"
+chmod 666 "$HOME/scores.txt"
 
 # Function to view scores
 function view_scores() {
